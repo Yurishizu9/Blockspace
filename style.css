@@ -1,0 +1,169 @@
+* {
+	font-family: Inter,sans-serif;
+	box-sizing: border-box;
+	outline: 1px solid red;
+  	outline-offset: -1px;
+}
+
+.topnav {
+    display: grid;
+    grid-template-columns: 120px 2fr 120px;
+    
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    top: 0px;
+    padding: 1rem;
+}
+
+/* .topnav {
+	display: grid;
+	grid-template-columns: 120px 1fr 120px;
+	flex-direction: row;
+	padding: 16px;
+	top: 0;
+	width: 100%;
+    align-items: center;
+    flex-direction: row;
+} */
+
+.logo{
+    display: flex;
+    align-items: center;
+    justify-self: flex-start;
+}
+
+.middle-menu {
+	display: grid;
+	grid-auto-flow: column;
+    	flex-direction: row;
+	justify-self: center; /* puts nav-menu in the centre */
+	border-radius: 16px;
+	height: 100%;
+	line-height: 100%;
+	gap: 10px; /* gives a gap between home and inbox */
+	/* padding: 5px ; */
+}
+
+.middle-menu a {
+	text-decoration: none;
+	border-radius: 12px;
+	padding: 14px 8px; /* creates space inside the word Home and Inbox */
+	margin: 5px;
+}
+
+@media (max-width: 1000px) {
+    .middle-menu {
+        justify-self: start;
+    }
+}
+
+@media (max-width: 600px) {
+    .middle-menu {
+        justify-self: center; /* puts the main menu in the middle*/
+        position: absolute; /* keeps main menu at the bottom */
+        bottom: 0; /* move main menu to the bottom */
+        height: inherit; /* keeps the same height size */
+        margin-bottom: 20px; /* lift above the edge of the window */
+    }
+    .right-menu {
+        justify-self: flex-end;
+        position: absolute;
+    }
+}
+
+
+sup { 
+	vertical-align: top;
+}
+
+
+.right-menu {
+    display: flex; /* allows elements to be ligned up in collums*/
+    flex-direction: row; 
+    align-items: center; /* vertically alligns elements*/
+    justify-self: flex-end; /* allows element to be on the right side*/
+    gap: 10px; /* addd gap between elements*/
+}
+
+.btn_threedots {
+    width: fit-content;
+    height: 38px;
+    background-color: rgb(255,255,255, 0);
+    border-radius: 12px;
+    outline-width:  1; /* remove this when done */
+    border: 0
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* * {
+box-sizing: border-box;
+font-family: Arial, Helvetica, sans-serif;
+border: 2px solid  green;
+}
+
+html {
+	background-color: whitesmoke;
+} */
+
+/* #container {
+	background-color:red;
+	background: radial-gradient(50% 50% at 50% 50%, #07fc6215 0, rgba(255, 255, 255, 0) 100%);
+	top: 0;
+	left: 0;
+	right: 0;
+	pointer-events: none;
+	width: 200vw;
+	height: 200vh;
+	border: 4px pink;
+	transform: translate(-50vw,-100vh);
+	position: fixed;
+	z-index: -1;
+	
+} */
+
+/* body {
+height: 100%;
+width: 100%;
+margin: 0;
+background: royalblue;
+} */
+
+/* Style the top navigation bar */
+/* .topnav {
+	background-color: seagreen;
+	top: 5%;
+} */
+
+/* Style the topnav links */
+/* .navigation-menu{
+float: left;
+background-color: springgreen;
+} */
+
+/* Style the content */
+/* .content {
+	bottom:	90%;
+	padding: 10px;
+	height: 200px; /* Should be removed. Only for demonstration */
+} */
+
+/* Style the footer */
+/* .footer {
+	background-color:yellow;
+	position: absolute;
+	bottom: 0;
+    left: 0;
+    right: 0;
+    height:100px;
+} */
