@@ -74,13 +74,18 @@ div.username {
 	border-radius: 12px;
 	text-decoration: none;
 	padding: 8px 14px; 
+	gap: 10px;
+}
+div.username img {
+	height: 20px;
+	width: 20px;
 }
 button.btn_threedots {
 	display: flex;
 	align-items: center;
     width: fit-content;
     background-color: rgb(255,255,255, 0);
-    border-radius: 16px;
+    border-radius: 0.5rem;
     outline-width:  1; /* remove this when done */
     border: 0
 }
