@@ -10,14 +10,14 @@ html, body {
     height: 100%;
 }
 
-div.container {
+.container {
 	display: flex;
     flex-flow: column;
     align-items: flex-start;
 }
 
 /* NAVBAR < container ------------------------------- */
-div.nav {
+.nav {
     display: grid;
 	align-items: center;
     grid-template-columns: 120px 1fr 120px;
@@ -27,18 +27,18 @@ div.nav {
 	padding: 1rem;
 }
 /* LOGO < navbar < container */
-div.logo {
+.logo {
 	width:fit-content;
 	justify-self: flex-start; 
 }
-div.logo p{
+.logo p{
     display: flex;
 	flex-direction: row;
     align-items: center;
 	margin: 0px;
 }
 /* MIDLLE MENU < navbar < container */
-div.middle-menu {
+.middle-menu {
 	display: flex;
     flex-direction: row;
 	justify-self: center; 
@@ -47,19 +47,44 @@ div.middle-menu {
 	gap: 10px;
 	padding: 3px;
 }
-div.middle-menu a{
+.middle-menu a{
 	display: flex;
 	flex-direction: row;
 	align-items: center;
 	border-radius: 12px;
 	text-decoration: none;
-	padding: 8px 14px; 
+	padding: 8px 14px;
+	max-height: 32px;
 }
 sup {
 	margin-left: 1px;
 }
+
+.search {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr 1fr;
+	cursor: default;
+}
+.search svg {
+	align-self: center;
+	height: 14px;
+	width: 14px;
+}
+.searchbar {
+	align-self: center;
+	width: 100%;
+	outline: none;
+	border: show;
+}
+
+.username img:hover{
+    display:none;
+}
+
+
 /* RIGHT MENU < navbar < container */
-div.right-menu {
+.right-menu {
     display: flex;
     flex-direction: row;
 	justify-self: flex-end; 
@@ -67,7 +92,7 @@ div.right-menu {
 	height: 38px;
 	gap: 10px;
 }
-div.username {
+.username {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
@@ -76,12 +101,12 @@ div.username {
 	padding: 8px 14px; 
 	gap: 10px;
 }
-div.username img {
+.username img {
 	height: 20px;
 	width: 20px;
 
 }
-button.btn_threedots {
+.btn_threedots {
 	display: flex;
 	align-items: center;
     width: fit-content;
@@ -92,7 +117,7 @@ button.btn_threedots {
 }
 
 /* MAIN BODY < container ------------------------------- */
-div.content {
+.content {
 	display: flex;
     flex-direction: column;
     width: 100%;
@@ -106,7 +131,9 @@ main {
 	height: auto;
 }
 
-div.broadcast {
+
+/*  BROADCAST PANEL < main body < container ------------------------------- */
+.broadcast_panel {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: 75px 1fr;
@@ -115,42 +142,60 @@ div.broadcast {
 	height: 100%;
 }
 
-div.broadcast .profile{
+.broadcast_panel .broadcast_profile{
 	display: flex;
 	justify-content: center;
 }
-.profile img {
+.broadcast_profile img {
 	width: 50px;
 	height: 50px;
 	margin-top: 15px;
 }
 
-
-div.textarea {
+.broadcast_content {
+	display: flex;
+	flex-direction: column;	
+}
+.textarea {
 	margin: 10px 10px 0;
 	font-size: 26px;
-	word-break: break-all;
 	min-height: 35px;
     max-height: 175px;
 	overflow-y: auto;
-	border: solid rgba(255, 255, 255, 0);
+	user-select: text;
+	word-break: break-all;
+	outline: none;
+    
 } 
-div.textarea:empty:not(:focus):before{
+.textarea:empty:before{
     content:attr(placeholder);
 	color: #98a5b1;
 	cursor: text;
 }
-
-div.broadcast_options{
-	display: grid;
-	align-items: flex-start;
-	grid-auto-flow: column;
-	max-height: 40px;
-	
+.broadcast_options{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
+button.paperclip{
+	display: flex;
+	margin: 10px;
+	justify-self: flex-start;
+	border: 0;
+	width: 36px;
+	height: 36px;
+	background-color: rgb(255,255,255, 0);
+    outline-width:  1;
+}
+button.paperclip svg {
+	align-self: center;
+	height: inherit;
+	width: inherit;	
+}
+
 button.broadcast_btn {
 	display: flex;
-	align-self:center;
+	justify-self: flex-end;
 	padding: 8px 16px;
 	margin: 10px;
 	border: 0;
@@ -158,34 +203,43 @@ button.broadcast_btn {
     outline-width:  1;
 	font-size: 16px; 
 }
-button.paperclip {
-	display: flex;
-	align-self: center;
-	width: 34px;
-	height: 34px;
-	background-color: violet;
+
+.footer {
+	bottom: 0;
 }
 
 
 
+
+
+
+
+/* makes everything have a circular corder */
 .circle_border {
 	border-radius: 9999px;
+}
+
+
+
+
+
+
 
 /* when  browser size changes*/
 @media (max-width: 800px) {
-	div.nav {
+	.nav {
 		grid-template-columns: 48px 1fr 1fr;
 	}
-    div.middle-menu {
+    .middle-menu {
 		justify-self: start; 
     }
 }
 
 @media (max-width: 500px) {
-	div.nav {
+	.nav {
 		grid-template-columns: 1fr 1fr;
 	}
-	div.middle-menu {
+	.middle-menu {
         justify-self: center;
         position: absolute; /* keeps main menu at the bottom */
         bottom: 0;
@@ -195,7 +249,7 @@ button.paperclip {
 
 
 @media (max-width: 220px) {
-    div.middle-menu {
+    .middle-menu {
 		background-color: orangered;
     }
 }
