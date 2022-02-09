@@ -72,14 +72,18 @@ sup {
 	width: 14px;
 }
 .searchbar {
+	display:none;
+	transition-duration: 1s;
+	transition: ease-in;
+}
+
+/* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
+.search:hover > .searchbar{
+	display:block;
 	align-self: center;
 	width: 100%;
 	outline: none;
 	border: show;
-}
-
-.username img:hover{
-    display:none;
 }
 
 
