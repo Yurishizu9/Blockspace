@@ -72,14 +72,17 @@ sup {
 	width: 14px;
 }
 .searchbar {
+	display: none;
 	align-self: center;
 	width: 100%;
 	outline: none;
 	border: show;
 }
 
-.username img:hover{
-    display:none;
+#s:hover ~ .searchbar{
+	display: block;
+	
+    /* font-size: 50px; */
 }
 
 
