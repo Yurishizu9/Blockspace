@@ -1,0 +1,284 @@
+* {
+	font-family: Inter,sans-serif;
+	box-sizing: border-box;
+	outline: 1px solid rgb(255, 0, 0);
+  	outline-offset: -1px;
+	transition: all .2s ease-in-out;
+
+
+}
+
+html, body {
+    margin: 0;
+    height: 100%;
+}
+
+.container {
+	display: flex;
+    flex-flow: column;
+    align-items: flex-start;
+}
+
+/* NAVBAR < container ------------------------------- */
+.nav {
+    display: grid;
+	align-items: center;
+    grid-template-columns: 120px 1fr 120px;
+	position: fixed;
+    width: 100%;
+    top: 0px;
+	padding: 1rem;
+}
+/* LOGO < navbar < container */
+.logo {
+	width:fit-content;
+	justify-self: flex-start; 
+}
+.logo p{
+    display: flex;
+	flex-direction: row;
+    align-items: center;
+	margin: 0px;
+}
+/* MIDLLE MENU < navbar < container */
+.middle-menu {
+	display: flex;
+    flex-direction: row;
+	justify-self: center; 
+	border-radius: 16px;
+	line-height: 100%;
+	gap: 10px;
+	padding: 3px;
+}
+.middle-menu a{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 12px;
+	text-decoration: none;
+	padding: 8px 14px;
+	max-height: 32px;
+}
+sup {
+	margin-left: 1px;
+}
+
+.search {
+	display: grid;
+	grid-auto-flow: column;
+	/* grid-template-columns: 1fr 1fr; */
+	cursor: default;
+}
+.search svg {
+	align-self: center;
+	height: 14px;
+	width: 14px;
+}
+.searchbar {
+<<<<<<< HEAD:Pages/Community/style.css
+	display: none;
+=======
+	width: 0;
+	margin: 0;
+}
+
+/* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
+.search:hover > .searchbar{
+	display:block;
+>>>>>>> 22bacf63eb169455b561ea25bd22c85ebb48021a:style.css
+	align-self: center;
+	width: 100%;
+	outline: none;
+	border: show;
+}
+.searchbar:focus-visible{
+	display:block;
+	display:block;
+	align-self: center;
+	width: 100%;
+	outline: none;
+
+
+
+<<<<<<< HEAD:Pages/Community/style.css
+#s:hover ~ .searchbar{
+	display: block;
+	
+    /* font-size: 50px; */
+=======
+>>>>>>> 22bacf63eb169455b561ea25bd22c85ebb48021a:style.css
+}
+
+
+/* RIGHT MENU < navbar < container */
+.right-menu {
+    display: flex;
+    flex-direction: row;
+	justify-self: flex-end; 
+	line-height: 100%;
+	height: 38px;
+	gap: 10px;
+}
+.username {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	border-radius: 12px;
+	text-decoration: none;
+	padding: 8px 14px; 
+	gap: 10px;
+}
+.username img {
+	height: 20px;
+	width: 20px;
+
+}
+.btn_threedots {
+	display: flex;
+	align-items: center;
+    width: fit-content;
+    background-color: rgb(255,255,255, 0);
+    border-radius: 0.5rem;
+    outline-width:  1; /* remove this when done */
+    border: 0
+}
+
+/* MAIN BODY < container ------------------------------- */
+.content {
+	display: flex;
+    flex-direction: column;
+    width: 100%;
+	padding: 120px 16px 0px;
+}
+
+main {
+	max-width: 480px;
+    width: 100%;
+	margin: 1rem auto auto;
+	height: auto;
+}
+
+
+/*  BROADCAST PANEL < main body < container ------------------------------- */
+.broadcast_panel {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 75px 1fr;
+	border-radius: 24px;
+	/* max-height: 200px; */
+	height: 100%;
+}
+
+.broadcast_panel .broadcast_profile{
+	display: flex;
+	justify-content: center;
+}
+.broadcast_profile img {
+	width: 50px;
+	height: 50px;
+	margin-top: 15px;
+}
+
+.broadcast_content {
+	display: flex;
+	flex-direction: column;	
+}
+.textarea {
+	margin: 10px 10px 0;
+	font-size: 26px;
+	min-height: 35px;
+    max-height: 175px;
+	overflow-y: auto;
+	user-select: text;
+	word-break: break-all;
+	outline: none;
+    
+} 
+.textarea:empty:before{
+    content:attr(placeholder);
+	color: #98a5b1;
+	cursor: text;
+}
+.broadcast_options{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+button.paperclip{
+	display: flex;
+	margin: 10px;
+	justify-self: flex-start;
+	border: 0;
+	width: 36px;
+	height: 36px;
+	background-color: rgb(255,255,255, 0);
+    outline-width:  1;
+}
+button.paperclip svg {
+	align-self: center;
+	height: inherit;
+	width: inherit;	
+}
+
+button.broadcast_btn {
+	display: flex;
+	justify-self: flex-end;
+	padding: 8px 16px;
+	margin: 10px;
+	border: 0;
+	background-color: rgb(255,255,255, 0);
+    outline-width:  1;
+	font-size: 16px; 
+}
+
+.footer {
+	bottom: 0;
+}
+
+
+
+
+
+
+
+/* makes everything have a circular corder */
+.circle_border {
+	border-radius: 9999px;
+}
+
+
+
+
+
+
+
+/* when  browser size changes*/
+@media (max-width: 800px) {
+	.nav {
+		grid-template-columns: 48px 1fr 1fr;
+	}
+    .middle-menu {
+		justify-self: start; 
+    }
+}
+
+@media (max-width: 500px) {
+	.nav {
+		grid-template-columns: 1fr 1fr;
+	}
+	.middle-menu {
+        justify-self: center;
+        position: absolute; /* keeps main menu at the bottom */
+        bottom: 0;
+        margin-bottom: 20px; /* lift above the edge of the window */
+    }
+}
+
+
+@media (max-width: 220px) {
+    .middle-menu {
+		background-color: orangered;
+    }
+}
+
+
