@@ -1,15 +1,20 @@
 :root {
-  /* colors for light mode */
-  --l-bkg1: white;
-  --l-bkg2: rgb(225, 225, 235); 
-  --l-bkg3: rgb(200, 200, 210); 
-  --l-bkg4: rgb(175, 175, 185); 
-  --l-font: black;
-  
-  /*set padding*/
-  --xs-pad: 4px 8px;
-  --s-pad: 8px 16px;
-  --m-pad: 16px 32px;
+    /* colors for light mode */
+    --l-bkg1: white;
+    --l-bkg2: rgb(245, 245, 245); 
+    --l-bkg3: rgb(200, 200, 200); 
+    --l-bkg4: rgb(175, 175, 185); 
+    --l-font: black;
+
+    /*set padding*/
+    --xs-pad: 4px 8px;
+    --s-pad: 8px 16px;
+    --m-pad: 16px 32px;
+
+    /*set the radius, margins or padding*/
+    --xs-rmp: 4px;
+    --s-rmp: 8px;
+    --m-rmp: 16px;
 }
 
 
@@ -99,7 +104,7 @@ html, body {
   display: flex;
   position: relative;
   flex-grow: 1;
-  align-self: flex-start;
+  align-self: center;
   align-items: flex-start;
   flex-shrink: 1;
   flex-direction: column;
@@ -115,33 +120,30 @@ html, body {
   font-stretch: normal;
 }
 .inbox15-address-panel {
-  width: 100%;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  align-items: flex-start;
-  flex-shrink: 1;
-  flex-direction: row;
-  justify-content: flex-start;
+    max-width: fit-content;
+    display: flex;
+    position: relative;
+    align-self: stretch;
+    align-items: flex-start;
+    flex-shrink: 1;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: var(--l-bkg2);
+    padding: var(--xs-pad);
+    border-radius: var(--xs-rmp);
 }
 .inbox15-address {
-  color: rgba(196, 196, 196, 1);
-  height: auto;
-  margin: 0 8px 0 0;
+  color: var(--l-bkg3);
   font-size: 10px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: IBM Plex Sans;
-  font-weight: 400;
-  line-height: 1.15;
-  font-stretch: normal;
-  text-transform: none;
-  text-decoration: none;
+  height: fit-content;
+  padding-right: var(--s-rmp);
 }
 .inbox15-copy-svg {
   width: 11;
   height: 11;
+}
+.inbox15-copy-svg:hover{
+    cursor: pointer;
 }
 .inbox15-inbox-panel {
   flex: 1;
@@ -159,7 +161,7 @@ html, body {
 .inbox15-search-panel {
   width: 100%;
   display: flex;
-  padding: 16px 0 0 0;
+  margin-top: var(--m-rmp);
   position: relative;
   align-items: flex-end;
   flex-direction: column;
@@ -167,10 +169,9 @@ html, body {
 .inbox15-search-box {
   width: 100%;
   display: flex;
-  padding: 8px 16px;
+  padding: var(--s-pad);
   position: relative;
   align-self: stretch;
-  
   align-items: center;
   border-color: rgba(228, 228, 228, 1);
   border-style: solid;
@@ -184,25 +185,36 @@ html, body {
   margin: 0 8px 0 0;
 }
 .inbox15-search-input {
-  color: rgba(196, 196, 196, 1);
+  color: var(--l-font);
+  max-height: fit-content;
   width: 100%;
-  padding: 0px;
   align-self: stretch;
   border-width: 0px;
   background-color: transparent;
+  outline: none;
+}
+.inbox15-search-box:focus-within{
+    border-color: var(--l-font);
+}
+::placeholder{
+	color: var(--l-bkg3);
+	cursor: text;
 }
 .inbox15-recipient-panel {
   width: 100%;
-  height: 40px;
+  height: 45px;
   display: flex;
   position: relative;
   margin-top: 16px;
   align-items: center;
   justify-content: center;
 }
+.inbox15-recipient-panel:hover{
+    cursor: pointer;
+}
 .inbox15-recepient-pfp {
-  width: 40;
-  height: 40;
+  width: 45px;
+  height: 45px;
   margin-right: 10px;
 }
 .inbox15-recipient-detail {
