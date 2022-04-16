@@ -5,6 +5,7 @@
     --l-bkg3: rgb(200, 200, 200); 
     --l-bkg4: rgb(175, 175, 185); 
     --l-font: black;
+    --l-shadow: rgba(0, 0, 0, 0.2);
 
     /*set padding*/
     --xs-pad: 4px 8px;
@@ -54,27 +55,34 @@ html, body {
 }
 
 .inbox15-container {
-  background-color: blue;
+  background-color: white;
   min-height: 100vh;
+  border: solid red 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: ;
+  align-items: center;
+}
+nav{
+    border: solid 2px red;
+    width: 500px;
+    height: 40px;
 }
 .inbox15-inbox {
+  flex: 1;
   width: 500px;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   overflow: hidden;
   position: relative;
-  max-width: 100%;
-  min-width: 500px;
-  box-shadow: 2px 2px 50px 2px rgba(0, 0, 0, 0.329);
-  
-  max-height: 100%;
-  min-height: 900px;
+  /*min-width: 500px;
+  min-height: 300px;*/
+
   align-items: stretch;
 
-  border-radius: 16px;
-  flex-direction: column;
-  justify-content: flex-start;
-  background-color: rgb(255, 255, 255);
+  box-shadow: 2px 2px 50px 2px var(--l-shadow);  
+  background-color: var(--l-bkg1);
+  border-radius: 16px;  
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
