@@ -20,8 +20,8 @@
 
 /* STYLING AND EXTRAS -------------------------------------------------*/
 * {
-	/* outline-offset: -1px;
-	outline: 1px solid rgb(255, 0, 0); */
+	outline-offset: -1px;
+	outline: 1px solid rgb(255, 0, 0);
 
   font-family: IBM Plex Sans;
   box-sizing: border-box;
@@ -194,11 +194,11 @@ nav{
 }
 
 
-/* SEARCH PANEL ------------------------------------------------*/
-.inbox15-inbox-panel {
+/* INBOX CONTENTS ----------------------------------------------*/
+.inbox15-inbox-contents {
+  display: none;
   flex: 1;
   width: 100%;
-  display: flex;
   align-self: stretch;
   overflow-x: hidden;
   overflow-y: auto;
@@ -208,6 +208,8 @@ nav{
   flex-direction: column;
   justify-content: flex-start;
 }
+
+/* SEARCH PANEL ------------------------------------------------*/
 .inbox15-search-panel {
   width: 100%;
   display: flex;
@@ -319,7 +321,7 @@ nav{
 /* EMPTY INBOX -------------------------------------------------*/
 .empty-inbox {
   /* background-color: orange; */
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -388,4 +390,290 @@ nav{
 }
 .search-result:hover {
   cursor: pointer;
+}
+
+/*MESSAGE PANEL-----------------------------------------------*/
+
+.direct-message-panel {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  position: relative;
+  /* padding: 0 0 16px 0; */ 
+}
+
+/*MESSAGE TOP ------------------------------------------------*/
+
+.dm-top-panel {
+ display: flex;
+ width: 100%;
+ padding: 12px 0;
+ justify-content: flex-end;
+ align-items: center;
+ border-bottom-width: 1px;
+ border-style: solid;
+ border-color: var(--l-bkg2);
+ gap: 8px;
+}
+
+.correspondent-pfp {
+  width: 40px;
+  height: 40px;
+  background-color: #ff0000;
+  border-radius: 100px;
+}
+
+.corr-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.corr-username {
+  color: var(--l-font);
+}
+.corr-address {
+  color: var(--l-bkg4);
+}
+
+.dm-container {
+  background-color: aqua;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: auto;
+  width: 100%;
+  flex: 1;
+}
+
+.user-dm {
+  
+  align-self: flex-end;
+  background-color: var(--l-bkg2);
+}
+
+.dm {
+  display: flex;
+  padding: var(--m-pad);
+  border-radius: var(--m-rmp);
+  width: 350px;
+}
+
+
+
+
+
+/* EXTRAS*/
+
+
+.directmessagepanel63646-direct-message-panel {
+  width: 363px;
+  height: 781px;
+  display: flex;
+  padding: 0 0 16px 0;
+  position: relative;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  flex-direction: column;
+}
+.directmessagepanel63646-top-panel {
+  width: 100%;
+  display: flex;
+  padding: 12px 0;
+  position: relative;
+  box-sizing: border-box;
+  align-items: center;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 0px;
+  justify-content: flex-end;
+  border-top-width: 0px;
+  border-left-width: 0px;
+  border-right-width: 0px;
+  border-bottom-width: 1px;
+}
+.directmessagepanel63646-user-pfp {
+  width: 40px;
+  height: 40px;
+  margin: 0 10px 0 0;
+  display: flex;
+  position: relative;
+  align-self: center;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  border-radius: 100px;
+  background-color: #ff0000;
+}
+.directmessagepanel63646-details {
+  display: flex;
+  position: relative;
+  align-self: center;
+  box-sizing: border-box;
+  align-items: flex-start;
+  border-color: transparent;
+  flex-direction: column;
+}
+.directmessagepanel63646-username {
+  color: rgba(0, 0, 0, 1);
+  height: auto;
+  font-size: 16px;
+  align-self: flex-start;
+  font-style: normal;
+  text-align: left;
+  font-family: Space Grotesk;
+  font-weight: 700px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.directmessagepanel63646-address {
+  color: rgba(196, 196, 196, 1);
+  height: auto;
+  font-size: 10px;
+  align-self: flex-start;
+  font-style: normal;
+  text-align: left;
+  font-family: Space Mono;
+  font-weight: 400px;
+  line-height: normal;
+  font-stretch: normal;
+  text-decoration: none;
+}
+.directmessagepanel63646-messages {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+  flex-grow: 1;
+  box-sizing: border-box;
+  align-items: center;
+  border-color: transparent;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+.directmessagepanel63646-user-msg {
+  gap: 7px;
+  margin: 0 0 8px 0;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  box-sizing: border-box;
+  align-items: flex-end;
+  border-color: transparent;
+  justify-content: flex-end;
+}
+.directmessagepanel63646-contents {
+  color: rgba(0, 0, 0, 1);
+  width: 140px;
+  height: auto;
+  font-size: 10px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Space Grotesk;
+  font-weight: 400px;
+  line-height: normal;
+  padding-top: 16px;
+  font-stretch: normal;
+  padding-left: 16px;
+  border-radius: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  background-color: #969696;
+}
+.directmessagepanel63646-u-pfp {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  align-items: flex-start;
+  flex-shrink: 1;
+  margin-left: 0px;
+  border-color: transparent;
+  border-radius: 100px;
+  background-color: rgba(255, 0, 0, 1);
+}
+.directmessagepanel63646-correspondent-msg {
+  gap: 8px;
+  display: flex;
+  position: relative;
+  align-self: stretch;
+  box-sizing: border-box;
+  align-items: flex-end;
+  border-color: transparent;
+  justify-content: flex-start;
+}
+.directmessagepanel63646-c-pfp {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  position: relative;
+  box-sizing: border-box;
+  margin-top: 0 8px 0 0;
+  align-items: flex-start;
+  flex-shrink: 1;
+  margin-left: 0 8px 0 0;
+  border-color: transparent;
+  margin-right: 0px;
+  border-radius: 100px;
+  margin-bottom: 0 8px 0 0;
+  background-color: rgba(255, 0, 0, 1);
+}
+.directmessagepanel63646-content {
+  color: rgba(0, 0, 0, 1);
+  width: 140px;
+  height: auto;
+  font-size: 10px;
+  align-self: auto;
+  font-style: normal;
+  text-align: left;
+  font-family: Space Grotesk;
+  font-weight: 400px;
+  line-height: normal;
+  padding-top: 16px;
+  font-stretch: normal;
+  padding-left: 16px;
+  border-radius: 16px;
+  padding-right: 16px;
+  padding-bottom: 16px;
+  text-decoration: none;
+  background-color: #ece8e8;
+}
+.directmessagepanel63646-msg-textbox {
+  width: 100%;
+  height: 49px;
+  display: flex;
+  padding: 8px 16px;
+  position: relative;
+  align-self: stretch;
+  box-sizing: border-box;
+  margin-top: 16px;
+  align-items: center;
+  border-color: rgba(0, 0, 0, 1);
+  border-style: solid;
+  border-width: 1px;
+  border-radius: 16px;
+}
+.directmessagepanel63646-texbox {
+  width: 100%;
+  padding: 0px0;
+  align-self: stretch;
+  padding-top: 0px;
+  border-style: hidden;
+  border-width: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
+  padding-bottom: 0px;
+}
+.directmessagepanel63646-svg {
+  width: 13;
+  height: 13;
 }
