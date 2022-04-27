@@ -11,8 +11,16 @@
   <body>
     <link href="./inbox15.css" rel="stylesheet" />
     <div class="inbox15-container">
-      <nav>"navigation bar"</nav>
+
+      <!-- navbar -->
+      <nav>
+        <div class="mid-btn logout">Logout</div>
+      </nav>
+
+      <!-- inbox page -->
       <div class="inbox15-inbox">
+
+        <!-- top panel with user infromation -->
         <div class="inbox15-top-panel">
           <div class="inbox15-user-panel">
             <img
@@ -36,13 +44,14 @@
           </div>
         </div>
         <div class="inbox15-inbox-panel">
+
+          <!-- search bar -->
           <div class="inbox15-search-panel">
             <div class="inbox15-search-box">
-              <img
-                alt="searchsvg452"
-                src="public/playground_assets/searchsvg452-7o3l.svg"
-                class="inbox15-search-svg"
-              />
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" class="search-svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M8.17298 10.0142C7.33264 10.5934 6.31406 10.9325 5.21627 10.9325C2.33541 10.9325 0 8.59714 0 5.71627C0 2.8354 2.33541 0.5 5.21627 0.5C8.09714 0.5 10.4325 2.8354 10.4325 5.71627C10.4325 6.81406 10.0934 7.83264 9.51423 8.67297L13 12.1587L11.6587 13.5L8.17298 10.0142ZM5.21627 9.03573C7.04955 9.03573 8.53572 7.54956 8.53572 5.71629C8.53572 3.88301 7.04955 2.39684 5.21627 2.39684C3.38299 2.39684 1.89683 3.88301 1.89683 5.71629C1.89683 7.54956 3.38299 9.03573 5.21627 9.03573Z"/>
+              </svg>
+
               <input
                 type="text"
                 placeholder="Search for username or wallet address..."
@@ -50,6 +59,42 @@
               />
             </div>
           </div>
+
+          <!-- search results -->
+          <div class="search-results-panel">
+            <div class="search-result">
+              <img
+                alt="profile picture of user from search results"
+                src="public/playground_assets/search-avatar.png"
+                class="sr-pfp"/>
+
+              <div class="sr-details">
+                <span class="sr-username content">
+                  sPicy_jem
+                </span>
+                <span class="sr-address content">
+                  0xb3d5d886eE1BAc93bC7252edD2a99349dD4A415A
+                </span>
+            </div>
+            </div>
+            <div class="search-result">
+              <img
+                alt="profile picture of user from search results"
+                src="public/playground_assets/search-avatar.png"
+                class="sr-pfp"/>
+
+              <div class="sr-details">
+                <span class="sr-username content">
+                  sPicy_jem
+                </span>
+                <span class="sr-address content">
+                  0xb3d5d886eE1BAc93bC7252edD2a99349dD4A415A
+                </span>
+            </div>
+            </div>
+          </div>
+          
+          <!-- when user has messages -->
           <div class="inbox15-recipient-panel">
             <img
               alt="recipient profile picture"
@@ -68,6 +113,18 @@
               </div>
             </div>
           </div>
+
+          <!-- when the users inbox is empty -->
+          <div class="empty-inbox">
+            <span class="heading">Empty Inbox</span>
+            <span class="content">send a direct message to a wallet address</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="84" height="83" viewBox="0 0 84 83" fill="none">
+              <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5772 48.832L3 28.3259L81.4888 2.16296L55.3259 80.6518L34.8198 53.0746L46.8406 36.8112L30.5772 48.832Z"/>
+            </svg>
+            <div class="mid-btn dm">Send message</div>
+          </div>
+
+
         </div>
       </div>
     </div>

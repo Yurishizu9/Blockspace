@@ -2,8 +2,8 @@
     /* colors for light mode */
     --l-bkg1: white;
     --l-bkg2: rgb(245, 245, 245); 
-    --l-bkg3: rgb(200, 200, 200); 
-    --l-bkg4: rgb(175, 175, 185); 
+    --l-bkg3: rgb(218, 218, 218); 
+    --l-bkg4: rgb(192, 192, 196); 
     --l-font: black;
     --l-shadow: rgba(0, 0, 0, 0.2);
 
@@ -18,7 +18,15 @@
     --m-rmp: 16px;
 }
 
+/* STYLING AND EXTRAS -------------------------------------------------*/
+* {
+	/* outline-offset: -1px;
+	outline: 1px solid rgb(255, 0, 0); */
 
+  font-family: IBM Plex Sans;
+  box-sizing: border-box;
+	transition: all .2s ease-in-out;
+}
 
 .heading {
   font-size: 28px;
@@ -37,16 +45,41 @@
   text-decoration: none;
 }
 
-
-* {
-	/* outline-offset: -1px;
-	outline: 1px solid rgb(255, 0, 0); */
-
-  font-family: IBM Plex Sans;
-  box-sizing: border-box;
-	transition: all .2s ease-in-out;
+/* BUTTONS */
+.small-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  font-size: 12px;
+  color: var(--l-font);
+  background-color: var(--l-bkg3);
+  padding: var(--xs-pad);
+  border-radius: var(--s-rmp);
+  border: 1px solid var(--l-bkg4);
+}
+.mid-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  height: fit-content;
+  font-size: 16px;
+  color: var(--l-font);
+  background-color: var(--l-bkg3);
+  padding: var(--s-pad);
+  border-radius: var(--m-rmp);
+  border: 1px solid var(--l-bkg4);
 }
 
+.mid-btn:hover, .small-btn:hover {
+  cursor: pointer;
+  background-color: var(--l-font);
+  color: var(--l-bkg1);
+}
+
+/* PAGE --------------------------------------------------------------*/
 html, body {
   margin: 0;
   height: 100%;
@@ -57,17 +90,21 @@ html, body {
 .inbox15-container {
   background-color: white;
   min-height: 100vh;
-  border: solid red 2px;
   display: flex;
   flex-direction: column;
-  justify-content: ;
   align-items: center;
 }
+
+/* NAV BAR ------------------------------------------------------------*/
 nav{
-    border: solid 2px red;
-    width: 500px;
-    height: 40px;
+  display: flex;
+  justify-content: end;
+  width: 500px;
+  height: fit-content;
+  margin: 10px 0 20px 0;
 }
+
+/* INBOX PANEL --------------------------------------------------------*/
 .inbox15-inbox {
   flex: 1;
   width: 500px;
@@ -86,11 +123,13 @@ nav{
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
+/* TOP PANEL --------------------------------------------------*/
 .inbox15-top-panel {
   flex: 0;
   display: flex;
   padding: 20px;
-  border-bottom: 1px solid rgb(0, 0, 0, 0.1);
+  border-bottom: 1px solid var(--l-bkg2);
 }
 .inbox15-user-panel {
   width: 100%;
@@ -141,7 +180,7 @@ nav{
     border-radius: var(--xs-rmp);
 }
 .inbox15-address {
-  color: var(--l-bkg3);
+  color: var(--l-bkg4);
   font-size: 10px;
   height: fit-content;
   padding-right: var(--s-rmp);
@@ -153,6 +192,9 @@ nav{
 .inbox15-copy-svg:hover{
     cursor: pointer;
 }
+
+
+/* SEARCH PANEL ------------------------------------------------*/
 .inbox15-inbox-panel {
   flex: 1;
   width: 100%;
@@ -181,17 +223,19 @@ nav{
   position: relative;
   align-self: stretch;
   align-items: center;
-  border-color: rgba(228, 228, 228, 1);
+  border-color: var(--l-bkg3);
   border-style: solid;
   border-width: 1px;
   border-radius: 16px;
   justify-content: center;
 }
-.inbox15-search-svg {
-  width: 13;
-  height: 13;
-  margin: 0 8px 0 0;
+.search-svg {
+ width: 13px;
+ height: 13px;
+ margin: 0 8px 0 0;
+ fill: var(--l-bkg3);
 }
+
 .inbox15-search-input {
   color: var(--l-font);
   max-height: fit-content;
@@ -201,13 +245,20 @@ nav{
   background-color: transparent;
   outline: none;
 }
-.inbox15-search-box:focus-within{
-    border-color: var(--l-font);
+.inbox15-search-box:focus-within .search-svg{
+  fill: var(--l-font);
 }
+.inbox15-search-box:focus-within{
+  border-color: var(--l-font);
+}
+
+
 ::placeholder{
 	color: var(--l-bkg3);
 	cursor: text;
 }
+
+/* DIRECT MESSAGES ---------------------------------------------*/
 .inbox15-recipient-panel {
   width: 100%;
   height: 45px;
@@ -216,6 +267,7 @@ nav{
   margin-top: 16px;
   align-items: center;
   justify-content: center;
+  
 }
 .inbox15-recipient-panel:hover{
     cursor: pointer;
@@ -226,12 +278,10 @@ nav{
   margin-right: 10px;
 }
 .inbox15-recipient-detail {
-  width: 330px;
+  width: 100%;
   display: flex;
-  position: relative;
-  flex-grow: 1;
-  align-items: flex-start;
   flex-direction: column;
+  align-items: flex-start;
 }
 .inbox15-recipient-username {
   color: rgba(0, 0, 0, 1);
@@ -263,4 +313,79 @@ nav{
   font-style: normal;
   text-align: left;
   font-stretch: normal;
+}
+
+
+/* EMPTY INBOX -------------------------------------------------*/
+.empty-inbox {
+  /* background-color: orange; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  flex: 1;
+}
+
+.empty-inbox span {
+  color: var(--l-bkg4);
+}
+
+.empty-inbox svg {
+  margin-top: 20px;
+  stroke: var(--l-bkg3);
+  stroke-width: 3px;
+}
+
+.dm {
+  margin-top: 40px;
+}
+
+.empty-inbox svg:hover {
+  transform: rotate(135deg);
+}
+
+
+/* SEARCH RESULTS ----------------------------------------------*/
+.search-results-panel{
+  display: none;
+  position: relative;
+  top: 10px;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  padding: var(--s-pad);
+  border-radius: var(--m-rmp);
+  border: 1px solid var(--l-font);
+  background-color: var(--l-bkg1);
+  gap: 10px;
+  /* overflow: auto; */
+  
+}
+.search-result {
+  display: flex;
+  width: 100%;
+  height: fit-content;
+  align-items: center;
+}
+.sr-pfp {
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+.sr-details {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.sr-username {
+  color: var(--l-font);
+}
+.sr-address {
+  color: var(--l-bkg3);
+}
+.search-result:hover {
+  cursor: pointer;
 }
