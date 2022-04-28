@@ -75,17 +75,7 @@ sup {
 	width: 14px;
 }
 .searchbar {
-<<<<<<< HEAD:Pages/Community/style.css
 	display: none;
-=======
-	width: 0;
-	margin: 0;
-}
-
-/* https://stackoverflow.com/questions/4502633/how-to-affect-other-elements-when-one-element-is-hovered */
-.search:hover > .searchbar{
-	display:block;
->>>>>>> 22bacf63eb169455b561ea25bd22c85ebb48021a:style.css
 	align-self: center;
 	width: 100%;
 	outline: none;
@@ -97,16 +87,13 @@ sup {
 	align-self: center;
 	width: 100%;
 	outline: none;
+}
 
 
-
-<<<<<<< HEAD:Pages/Community/style.css
 #s:hover ~ .searchbar{
 	display: block;
 	
     /* font-size: 50px; */
-=======
->>>>>>> 22bacf63eb169455b561ea25bd22c85ebb48021a:style.css
 }
 
 

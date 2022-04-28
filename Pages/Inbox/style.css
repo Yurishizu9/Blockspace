@@ -18,16 +18,16 @@
     --m-rmp: 16px;
 }
 
+
 /* STYLING AND EXTRAS -------------------------------------------------*/
 * {
-	outline-offset: -1px;
-	outline: 1px solid rgb(255, 0, 0);
+	/* outline-offset: -1px;
+	outline: 1px solid rgb(255, 0, 0); */
 
   font-family: IBM Plex Sans;
   box-sizing: border-box;
 	transition: all .2s ease-in-out;
 }
-
 .heading {
   font-size: 28px;
   font-family: IBM Plex Sans;
@@ -43,6 +43,10 @@
   line-height: 1.15;
   text-transform: none;
   text-decoration: none;
+}
+.shdw {
+  box-shadow: 2px 2px 50px 2px var(--l-shadow);  
+  background-color: var(--l-bkg1);
 }
 
 /* BUTTONS */
@@ -72,21 +76,20 @@
   border-radius: var(--m-rmp);
   border: 1px solid var(--l-bkg4);
 }
-
 .mid-btn:hover, .small-btn:hover {
   cursor: pointer;
   background-color: var(--l-font);
   color: var(--l-bkg1);
 }
 
-/* PAGE --------------------------------------------------------------*/
+
+/* PAGE ---------------------------------------------------------------*/
 html, body {
   margin: 0;
   height: 100%;
   min-height: 100%;
   display: block;
 }
-
 .inbox15-container {
   background-color: white;
   min-height: 100vh;
@@ -94,6 +97,7 @@ html, body {
   flex-direction: column;
   align-items: center;
 }
+
 
 /* NAV BAR ------------------------------------------------------------*/
 nav{
@@ -104,7 +108,152 @@ nav{
   margin: 10px 0 20px 0;
 }
 
-/* INBOX PANEL --------------------------------------------------------*/
+
+/*DIRECT MESSAGE PAGE -------------------------------------------------*/
+.direct-message-panel {
+  background-color: var(--l-bkg1);
+  display: flex;
+  width: 500px;
+  position: absolute;
+  top: -px;
+  flex-direction: column;
+  position: fixed;
+  padding: 0 20px;
+  border-radius: 16px 16px 0 0;
+  z-index: 1;
+  top: 160px;
+  bottom: 0px;
+}
+
+/* DM TOP PANEL*/
+.dm-top-panel {
+ display: flex;
+ width: 100%;
+ padding: 8px 0;
+ justify-content: flex-end;
+ align-items: center;
+ gap: 8px;
+}
+.correspondent-pfp {
+  width: 40px;
+  height: 40px;
+  background-color: var(--l-bkg3);
+  border-radius: 100px;
+}
+.corr-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+.corr-username {
+  color: var(--l-font);
+}
+.corr-address {
+  color: var(--l-bkg4);
+}
+
+
+/* DM CONTAINER*/
+.messages-container {
+
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-end;
+  overflow: auto;
+  width: 100%;
+  gap: 8px;
+  overflow-y: visible;
+  overflow-x: visible;
+}
+.msg-container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  gap: 8px;
+  
+}
+.msg-right { /*msg right */
+  align-self: flex-end; 
+}
+.msg-left { /*msg left */
+  flex-direction: row-reverse;
+  align-self: flex-start;
+}
+.user-msg {
+  display: flex;
+  width: 300px;
+  padding: var(--m-pad);
+  border-radius: var(--m-rmp);
+  background-color: var(--l-bkg2);
+  border: 1px solid var(--l-bkg2);
+  
+}
+.corr-msg {
+  display: flex;
+  width: 300px;
+  padding: var(--m-pad);
+  border-radius: var(--m-rmp);
+  background-color: var(--l-bkg1);
+  border: 1px solid var(--l-bkg2);
+  
+}
+.user-pfp, .corr-pfp {
+  height: 25px;
+  width: 25px;
+  border-radius: 100px;
+  background-color: var(--l-bkg3);
+}
+
+
+/* MSG TEXTBOX*/
+.msg-textbox-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: var(--m-rmp);
+  border: 1px solid var(--l-bkg3);
+  border-radius: var(--m-rmp);
+  margin-top: 10px;
+  margin-bottom: 16px;
+  gap: 8px;
+}
+.msg-textbox {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  flex: 1;
+  min-height: 20px;
+  max-height: 60px;
+	overflow-y: auto;
+	user-select: text;
+	word-break: break-all;
+	outline: none;   
+} 
+.msg-textbox:empty:before{
+  content:attr(placeholder);
+	color: var(--l-bkg3);
+	cursor: text;
+}
+.msg-textbox-container:focus-within {
+  border: 1px solid var(--l-font);
+}
+.msg-textbox:not(:empty) + .send-btn{
+  display: block;
+}
+.send-btn {
+  display: none;
+  width: fit-content;
+  font-size: 16px;
+  font-weight: bolder;
+}
+.send-btn:hover {
+  cursor: pointer;
+}
+
+
+/* INBOX PAGE --------------------------------------------------------*/
 .inbox15-inbox {
   flex: 1;
   width: 500px;
@@ -112,17 +261,12 @@ nav{
   flex-direction: column;
   overflow: hidden;
   position: relative;
-  /*min-width: 500px;
-  min-height: 300px;*/
-
   align-items: stretch;
-
-  box-shadow: 2px 2px 50px 2px var(--l-shadow);  
-  background-color: var(--l-bkg1);
   border-radius: 16px;  
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
 }
+
 
 /* TOP PANEL --------------------------------------------------*/
 .inbox15-top-panel {
@@ -194,9 +338,10 @@ nav{
 }
 
 
-/* INBOX CONTENTS ----------------------------------------------*/
+/* INBOX CONTENTS ----------------------------------------------
+contains search bar, search results and dms panels*/
 .inbox15-inbox-contents {
-  display: none;
+  display: flex;
   flex: 1;
   width: 100%;
   align-self: stretch;
@@ -208,6 +353,7 @@ nav{
   flex-direction: column;
   justify-content: flex-start;
 }
+
 
 /* SEARCH PANEL ------------------------------------------------*/
 .inbox15-search-panel {
@@ -237,7 +383,6 @@ nav{
  margin: 0 8px 0 0;
  fill: var(--l-bkg3);
 }
-
 .inbox15-search-input {
   color: var(--l-font);
   max-height: fit-content;
@@ -253,18 +398,17 @@ nav{
 .inbox15-search-box:focus-within{
   border-color: var(--l-font);
 }
-
-
 ::placeholder{
 	color: var(--l-bkg3);
 	cursor: text;
 }
 
+
 /* DIRECT MESSAGES ---------------------------------------------*/
 .inbox15-recipient-panel {
+  display: flex;
   width: 100%;
   height: 45px;
-  display: flex;
   position: relative;
   margin-top: 16px;
   align-items: center;
@@ -320,7 +464,6 @@ nav{
 
 /* EMPTY INBOX -------------------------------------------------*/
 .empty-inbox {
-  /* background-color: orange; */
   display: none;
   flex-direction: column;
   align-items: center;
@@ -328,21 +471,17 @@ nav{
   width: 100%;
   flex: 1;
 }
-
 .empty-inbox span {
   color: var(--l-bkg4);
 }
-
 .empty-inbox svg {
   margin-top: 20px;
   stroke: var(--l-bkg3);
   stroke-width: 3px;
 }
-
-.dm {
+.dm-btn {
   margin-top: 40px;
 }
-
 .empty-inbox svg:hover {
   transform: rotate(135deg);
 }
@@ -392,288 +531,5 @@ nav{
   cursor: pointer;
 }
 
-/*MESSAGE PANEL-----------------------------------------------*/
-
-.direct-message-panel {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  position: relative;
-  /* padding: 0 0 16px 0; */ 
-}
-
-/*MESSAGE TOP ------------------------------------------------*/
-
-.dm-top-panel {
- display: flex;
- width: 100%;
- padding: 12px 0;
- justify-content: flex-end;
- align-items: center;
- border-bottom-width: 1px;
- border-style: solid;
- border-color: var(--l-bkg2);
- gap: 8px;
-}
-
-.correspondent-pfp {
-  width: 40px;
-  height: 40px;
-  background-color: #ff0000;
-  border-radius: 100px;
-}
-
-.corr-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.corr-username {
-  color: var(--l-font);
-}
-.corr-address {
-  color: var(--l-bkg4);
-}
-
-.dm-container {
-  background-color: aqua;
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-  justify-content: flex-end;
-  overflow: auto;
-  width: 100%;
-  flex: 1;
-}
-
-.user-dm {
-  
-  align-self: flex-end;
-  background-color: var(--l-bkg2);
-}
-
-.dm {
-  display: flex;
-  padding: var(--m-pad);
-  border-radius: var(--m-rmp);
-  width: 350px;
-}
 
 
-
-
-
-/* EXTRAS*/
-
-
-.directmessagepanel63646-direct-message-panel {
-  width: 363px;
-  height: 781px;
-  display: flex;
-  padding: 0 0 16px 0;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  border-color: transparent;
-  flex-direction: column;
-}
-.directmessagepanel63646-top-panel {
-  width: 100%;
-  display: flex;
-  padding: 12px 0;
-  position: relative;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 0px;
-  justify-content: flex-end;
-  border-top-width: 0px;
-  border-left-width: 0px;
-  border-right-width: 0px;
-  border-bottom-width: 1px;
-}
-.directmessagepanel63646-user-pfp {
-  width: 40px;
-  height: 40px;
-  margin: 0 10px 0 0;
-  display: flex;
-  position: relative;
-  align-self: center;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  border-radius: 100px;
-  background-color: #ff0000;
-}
-.directmessagepanel63646-details {
-  display: flex;
-  position: relative;
-  align-self: center;
-  box-sizing: border-box;
-  align-items: flex-start;
-  border-color: transparent;
-  flex-direction: column;
-}
-.directmessagepanel63646-username {
-  color: rgba(0, 0, 0, 1);
-  height: auto;
-  font-size: 16px;
-  align-self: flex-start;
-  font-style: normal;
-  text-align: left;
-  font-family: Space Grotesk;
-  font-weight: 700px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.directmessagepanel63646-address {
-  color: rgba(196, 196, 196, 1);
-  height: auto;
-  font-size: 10px;
-  align-self: flex-start;
-  font-style: normal;
-  text-align: left;
-  font-family: Space Mono;
-  font-weight: 400px;
-  line-height: normal;
-  font-stretch: normal;
-  text-decoration: none;
-}
-.directmessagepanel63646-messages {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  overflow: hidden;
-  position: relative;
-  flex-grow: 1;
-  box-sizing: border-box;
-  align-items: center;
-  border-color: transparent;
-  flex-direction: column;
-  justify-content: flex-end;
-}
-.directmessagepanel63646-user-msg {
-  gap: 7px;
-  margin: 0 0 8px 0;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: flex-end;
-  border-color: transparent;
-  justify-content: flex-end;
-}
-.directmessagepanel63646-contents {
-  color: rgba(0, 0, 0, 1);
-  width: 140px;
-  height: auto;
-  font-size: 10px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Space Grotesk;
-  font-weight: 400px;
-  line-height: normal;
-  padding-top: 16px;
-  font-stretch: normal;
-  padding-left: 16px;
-  border-radius: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  text-decoration: none;
-  background-color: #969696;
-}
-.directmessagepanel63646-u-pfp {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  align-items: flex-start;
-  flex-shrink: 1;
-  margin-left: 0px;
-  border-color: transparent;
-  border-radius: 100px;
-  background-color: rgba(255, 0, 0, 1);
-}
-.directmessagepanel63646-correspondent-msg {
-  gap: 8px;
-  display: flex;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  align-items: flex-end;
-  border-color: transparent;
-  justify-content: flex-start;
-}
-.directmessagepanel63646-c-pfp {
-  width: 24px;
-  height: 24px;
-  display: flex;
-  position: relative;
-  box-sizing: border-box;
-  margin-top: 0 8px 0 0;
-  align-items: flex-start;
-  flex-shrink: 1;
-  margin-left: 0 8px 0 0;
-  border-color: transparent;
-  margin-right: 0px;
-  border-radius: 100px;
-  margin-bottom: 0 8px 0 0;
-  background-color: rgba(255, 0, 0, 1);
-}
-.directmessagepanel63646-content {
-  color: rgba(0, 0, 0, 1);
-  width: 140px;
-  height: auto;
-  font-size: 10px;
-  align-self: auto;
-  font-style: normal;
-  text-align: left;
-  font-family: Space Grotesk;
-  font-weight: 400px;
-  line-height: normal;
-  padding-top: 16px;
-  font-stretch: normal;
-  padding-left: 16px;
-  border-radius: 16px;
-  padding-right: 16px;
-  padding-bottom: 16px;
-  text-decoration: none;
-  background-color: #ece8e8;
-}
-.directmessagepanel63646-msg-textbox {
-  width: 100%;
-  height: 49px;
-  display: flex;
-  padding: 8px 16px;
-  position: relative;
-  align-self: stretch;
-  box-sizing: border-box;
-  margin-top: 16px;
-  align-items: center;
-  border-color: rgba(0, 0, 0, 1);
-  border-style: solid;
-  border-width: 1px;
-  border-radius: 16px;
-}
-.directmessagepanel63646-texbox {
-  width: 100%;
-  padding: 0px0;
-  align-self: stretch;
-  padding-top: 0px;
-  border-style: hidden;
-  border-width: 0px;
-  padding-left: 0px;
-  padding-right: 0px;
-  padding-bottom: 0px;
-}
-.directmessagepanel63646-svg {
-  width: 13;
-  height: 13;
-}

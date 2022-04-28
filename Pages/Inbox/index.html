@@ -17,8 +17,44 @@
         <div class="mid-btn logout">Logout</div>
       </nav>
 
-      <!-- inbox page -->
-      <div class="inbox15-inbox">
+      <!-- message PAGE -->
+      <div class="direct-message-panel shdw">
+
+        <div class="dm-top-panel">
+          <div class="correspondent-pfp"></div>
+          <div class="corr-details">
+            <span class="corr-username content">SatoshiNakamoto</span>
+            <span class="corr-address content">0x59F8...5C46</span>
+          </div>
+        </div>
+
+        <div class="messages-container">
+
+          <div class="msg-right msg-container">
+            <span class="user-msg content">
+              Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
+              accusantium doloremque laudantium,
+            </span>
+            <div class="user-pfp"></div>
+          </div>
+
+          <div class="msg-left msg-container">
+            <span class="corr-msg content">
+              explicabo. Nemo enim ipsam voluptatem, quia voluptas sit
+            </span>
+            <div class="corr-pfp"></div>
+          </div>
+          
+        </div>
+
+        <div class="msg-textbox-container">
+          <div class ="msg-textbox content" contenteditable="true" placeholder = "Message..."></div>
+          <Span class="send-btn content">Send</Span>
+        </div>
+      </div>
+
+      <!-- inbox PAGE -->
+      <div class="inbox15-inbox shdw">
 
         <!-- top panel with user infromation -->
         <div class="inbox15-top-panel">
@@ -44,47 +80,7 @@
           </div>
         </div>
 
-        <!-- messages -->
-        <div class="direct-message-panel">
-          <div class="dm-top-panel">
-            <div class="correspondent-pfp"></div>
-            <div class="corr-details">
-              <span class="corr-username content">SatoshiNakamoto</span>
-              <span class="corr-address content">0x59F8...5C46</span>
-            </div>
-          </div>
-          <div class="dm-container">
-
-            <div class="user-dm">
-              <span class="dm content">
-                Sed ut perspiciatis, unde omnis iste natus error sit voluptatem
-                accusantium doloremque laudantium,
-              </span>
-              <div class="u-pfp"></div>
-            </div>
-
-            <div class="correspondent-msg">
-              <span class="dm content">
-                explicabo. Nemo enim ipsam voluptatem, quia voluptas sit
-              </span>
-              <div class="c-pfp"></div>
-            </div>
-            
-          </div>
-          <div class="msg-textbox">
-            <input
-              type="text"
-              placeholder="placeholder"
-              class="texbox input content"
-            />
-            <img
-              alt="sendsvg63561"
-              src="/playground_assets/sendsvg63561-pctd.svg"
-              class="svg"
-            />
-          </div>
-        </div>
-
+        
 
         <div class="inbox15-inbox-contents">
           <!-- search bar -->
@@ -163,7 +159,7 @@
             <svg xmlns="http://www.w3.org/2000/svg" width="84" height="83" viewBox="0 0 84 83" fill="none">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M30.5772 48.832L3 28.3259L81.4888 2.16296L55.3259 80.6518L34.8198 53.0746L46.8406 36.8112L30.5772 48.832Z"/>
             </svg>
-            <div class="mid-btn dm">Send message</div>
+            <div class="mid-btn dm-btn">Send message</div>
           </div>
 
          
