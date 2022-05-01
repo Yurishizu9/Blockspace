@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+* {
+    box-sizing: border-box;
+    /* border: 1px solid red; */
+}
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+body, div {
+    display: flex;
+    flex-direction: column;
+}
+
+</style>
+<body>
+    <div class="top">
+        <p id="recipient-name">name: </p>
+        <p id="recipient-address">address:</p>
+    </div>
+
+    <div class="mid">
+        <p id="sender-name">from: </p>
+        <p id="message">message: </p>
+    </div>
+    
+    <div class="bottom">
+        <input type="text" name="" id="messagebox" placeholder="Message...">
+        <input type="button" value="Send">
+    </div>
+
+</body>
+</html>

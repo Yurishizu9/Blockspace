@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login</title>
+</head>
+
+<body>
+    <!-- 
+        ask for username and wallet address:
+        in future i will use moralis API to log in to the app with metamask
+    -->
+
+    <form action="{% url 'loginsystem:loginuser' %}" method="post">
+        {% csrf_token %}
+        <!-- username textbox -->
+        <input id="username-input" type="text" name="username" placeholder="username">
+        <!-- submit btn -->
+        <input id="username-submit" type="submit" value="Login">
+    </form>
+    <!-- error message -->
+
+
+
+</body>
+
+</html>

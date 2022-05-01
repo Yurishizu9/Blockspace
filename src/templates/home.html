@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+        <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <link href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" rel="Stylesheet">
+    <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+</head>
+<body>
+    <p id="username">hi {{user}}</p>
+    <!-- display address from database if it does not exixst show '###' -->
+    {% if address %}
+        <p id="address">address:{{address}}</p>
+    {% endif %}
+
+    <div class="selected">
+
+    </div>
+    <input type="text" name="" id="searchbar" placeholder="search for name or wallet address">
+</body>
+
+<script>
+
+      $(function() {
+            $("#searchbar").autocomplete({
+                source: "{% url 'loginsystem:autocomplete_user_name' %}",
+                select: function (event, ui) {
+
+                    // set the target element
+                    // retrieve selected value from event
+                    let selected = ui.item.value;
+                    var html = `<p id="chosen">You want to speak to: ${selected} </p>`
+                    $(".selected").empty();
+
+                    $(".selected").append(html);
+
+                    // set target value using .attr (using .val() does not work, for some reason)
+                }
+            });
+        });
+</script>
+
+
+</html>
